@@ -1,17 +1,27 @@
+let btnContainer = document.createElement('div');
+btnContainer.className = 'btn-container'
+document.body.appendChild(btnContainer);
+
+let clearBtn = document.createElement('button');
+clearBtn.className = 'clear-btn';
+clearBtn.textContent = "Reset Grid";
+btnContainer.appendChild(clearBtn);
+
 let gridContainer = document.createElement('div');
 gridContainer.className = 'grid-container'
-gridContainer.setAttribute( 'style',
-    "display: grid; font-size: 24px; grid-template-columns: repeat(16,1fr); width: 100%;"
-)
 
 document.body.appendChild(gridContainer);
 
 row = 256
 for( let i=0; i < row; i++){
     let gridSquare = document.createElement('div');
-    gridSquare.className = 'gird-square' 
-    gridSquare.textContent = "X"
-    gridSquare.setAttribute('style', 'border: 1px black solid')
+    gridSquare.className = 'grid-square' 
     gridContainer.append(gridSquare);
+    gridSquare.addEventListener("mouseover", (e) => {
+        gridSquare.style.backgroundColor = 'black';
+    });
 }
 
+// let clearBtn = document.createElement('button');
+// clearBtn.className = 'clear-btn';
+// document.body.appendChild(clearBtn);
